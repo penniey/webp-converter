@@ -31,8 +31,11 @@ A Firefox extension that adds a context menu option to convert images to PNG or 
 5. Select the `manifest.json` file from this directory
 
 ### For Production:
-
-The extension would need to be packaged and submitted to Mozilla Add-ons store.
+1. Download the project
+2. about:config
+3. xpinstall.signature.required set this to false
+4. about:addons
+5. Add file manually and choose the v2 version in the folder.
 
 ## How to Use
 
@@ -41,46 +44,9 @@ The extension would need to be packaged and submitted to Mozilla Add-ons store.
 3. Choose your preferred format (PNG or JPG) in the dialog
 4. The converted image will be automatically downloaded
 
-## File Structure
 
-```
-WEBPConverter/
-├── manifest.json       # Extension manifest
-├── background.js       # Background script for context menus
-├── content.js          # Content script for image conversion
-├── icons/             # Extension icons
-│   └── icon.svg       # SVG icon (can be converted to PNG sizes)
-└── README.md          # This file
-```
-
-## Technical Details
-
-- Uses HTML5 Canvas API for image conversion
-- Supports both direct image context menus and link context menus
-- Handles CORS issues by fetching images through the content script
-- Provides user feedback through notifications and loading indicators
-
-## Browser Compatibility
-
-- Firefox 57+ (WebExtensions API)
-- Uses Manifest V2 for maximum compatibility
-
-## Privacy
-
-This extension:
-- Only processes images when explicitly requested by the user
-- Does not collect or transmit any user data
-- Performs all conversions locally in the browser
-- Does not require any external services
-
-## Development
-
-To modify the extension:
-
-1. Make changes to the source files
-2. Reload the extension in `about:debugging`
-3. Test the changes on various websites
 
 ## License
 
 This extension is provided as-is for educational and personal use.
+
